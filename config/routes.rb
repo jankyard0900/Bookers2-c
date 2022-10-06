@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:index,:show,:edit,:update]
-  resources :groups, except: [:destroy]
+  resources :groups, only: [:index, :show, :edit, :create, :update, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
