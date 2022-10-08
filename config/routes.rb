@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index,:show,:edit,:update]
   resources :groups, only: [:index, :show, :edit, :create, :update, :new] do
-    get "join"=>"groups#join"
+    resource :group_users, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
